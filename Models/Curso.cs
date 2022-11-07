@@ -26,10 +26,20 @@ namespace ExemploExplorando.Models
         public void ListarAlunos(){
             int quantidade = ObterQuantideAlunosMatriculados();
             Console.WriteLine($"{quantidade} alunos matriculados no curso de {Nome}!");
-            foreach(Pessoa aluno in Alunos){
-                Console.WriteLine($"{aluno.NomeCompleto}");
+            Console.WriteLine("Listagem usando concatenação");
+            for(int count = 0; count < Alunos.Count; count++){
+                //contatenação de string
+                int sequencia = count+1;
+                string texto = "Nº " + sequencia + " - " +Alunos[count].NomeCompleto;
+                Console.WriteLine(texto);   
+            }
+            Console.WriteLine("Listagem usando interpolação");
+            for(int count = 0; count < Alunos.Count; count++){
+                //interpolação de string
+                int sequencia2 = count+1;
+                string texto2 = $"Nº {sequencia2} - {Alunos[count].NomeCompleto}";
+                Console.WriteLine(texto2);
             }
         }
-
     }
 }
