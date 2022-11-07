@@ -27,3 +27,37 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-Br");
 Console.WriteLine($"{valorMonetario1:C}");
 Console.WriteLine(valorMonetario1.ToString("C", CultureInfo.CreateSpecificCulture("en-US")));
 Console.WriteLine($"{valorMonetario2:C}");
+
+
+double porcentagem = .3254;
+
+Console.WriteLine(porcentagem.ToString("P"));
+
+int numero = 20221107;
+
+Console.WriteLine(numero.ToString("####-##-##"));
+
+DateTime data = DateTime.Now;
+int day = data.Day;
+
+Console.WriteLine($"{data}, {day} , {data.ToShortTimeString()}, {data.ToShortDateString()}");
+
+
+string dataString = "2022-07-170 18:00";
+
+DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date2);
+Console.WriteLine(date2);
+
+// DateTime date3 = DateTime.Parse(dataString);
+// Console.WriteLine(date3);
+
+bool sucess = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date);
+
+if (sucess)
+{
+    Console.WriteLine($"Conversão com sucesso! Data: {date}");
+}
+else
+{
+    Console.WriteLine($"{dataString} não é uma data válida");
+}
