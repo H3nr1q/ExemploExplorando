@@ -62,29 +62,99 @@ using System.Globalization;
 //     Console.WriteLine($"{dataString} não é uma data válida");
 // }
 
-try
-{
-    string[] linhas = File.ReadAllLines("Arquivos/AArquivoLeitura.txt");
+// try
+// {
+//     string[] linhas = File.ReadAllLines("Arquivos/AArquivoLeitura.txt");
 
-    foreach(string linha in linhas){
-        Console.WriteLine(linha);
-    }  
+//     foreach(string linha in linhas){
+//         Console.WriteLine(linha);
+//     }  
+// }
+// catch (FileNotFoundException ex)
+// {
+//     Console.WriteLine($"Arquivo não encontrado. {ex.Message}");
+// }
+// catch (DirectoryNotFoundException ex)
+// {
+//     Console.WriteLine($"Diretório não encontrado. {ex.Message}");
+// }
+// catch (Exception ex)
+// {
+//     Console.WriteLine($"Ocorreu uma exceção genérica. {ex.Message}");
+// }
+// finally{
+//     Console.WriteLine("Chegou até aqui e finalizou!");
+// }
+
+
+// new ExemploExcecao().Metodo1();
+
+
+// //Fila em C#
+// Queue<int> fila = new();
+// fila.Enqueue(2);
+// fila.Enqueue(4);
+// fila.Enqueue(6);
+// fila.Enqueue(8);
+// foreach(int item in fila){
+//     Console.WriteLine(item);
+// }
+
+// //Remove 1º elemento da fila
+// Console.WriteLine($"Removendo elemento: {fila.Dequeue()}");
+
+// foreach(int item in fila){
+//     Console.WriteLine(item);
+// }
+
+
+// // Pilha no C#
+
+// Stack<int> pilha = new();
+// pilha.Push(4);
+// pilha.Push(6);
+// pilha.Push(8);
+// pilha.Push(10);
+// pilha.Push(12);
+
+// foreach(int item in pilha){
+//     Console.WriteLine(item);
+// }
+
+
+// Console.WriteLine($"Removendo elemento: {pilha.Pop()}");
+
+// foreach(int item in pilha){
+//     Console.WriteLine(item);
+// }
+
+Dictionary<string, string> estados = new();
+estados.Add("SP", "São Paulo");
+estados.Add("RJ", "Rio de Janeiro");
+estados.Add("BA", "Bahia");
+
+Console.WriteLine(estados["RJ"]);
+
+foreach(KeyValuePair<string, string> item in estados){
+    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
 }
-catch (FileNotFoundException ex)
-{
-    Console.WriteLine($"Arquivo não encontrado. {ex.Message}");
+
+estados.Remove("RJ");
+estados["BA"] = "Bahia o";
+
+foreach(KeyValuePair<string, string> item in estados){
+    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
 }
-catch (DirectoryNotFoundException ex)
-{
-    Console.WriteLine($"Diretório não encontrado. {ex.Message}");
+
+string chave = "BA";
+Console.WriteLine($"Verificando elemento: {chave}");
+
+if(estados.ContainsKey(chave)){
+    Console.WriteLine($"Valor existente: {chave}");
 }
-catch (Exception ex)
-{
-    Console.WriteLine($"Ocorreu uma exceção genérica. {ex.Message}");
-}
-finally{
-    Console.WriteLine("Chegou até aqui e finalizou!");
+else{
+    Console.WriteLine($"Valor não existe. Adicionar a chave {chave}");
 }
 
 
-new ExemploExcecao().Metodo1();
+
