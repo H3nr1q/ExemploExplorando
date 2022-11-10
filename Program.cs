@@ -128,33 +128,96 @@ using System.Globalization;
 //     Console.WriteLine(item);
 // }
 
-Dictionary<string, string> estados = new();
-estados.Add("SP", "São Paulo");
-estados.Add("RJ", "Rio de Janeiro");
-estados.Add("BA", "Bahia");
 
-Console.WriteLine(estados["RJ"]);
+//DICTIONARY
+// Dictionary<string, string> estados = new();
+// estados.Add("SP", "São Paulo");
+// estados.Add("RJ", "Rio de Janeiro");
+// estados.Add("BA", "Bahia");
 
-foreach(KeyValuePair<string, string> item in estados){
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
-}
+// Console.WriteLine(estados["RJ"]);
 
-estados.Remove("RJ");
-estados["BA"] = "Bahia o";
+// foreach(KeyValuePair<string, string> item in estados){
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
 
-foreach(KeyValuePair<string, string> item in estados){
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
-}
+// estados.Remove("RJ");
+// estados["BA"] = "Bahia o";
 
-string chave = "BA";
-Console.WriteLine($"Verificando elemento: {chave}");
+// foreach(KeyValuePair<string, string> item in estados){
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
 
-if(estados.ContainsKey(chave)){
-    Console.WriteLine($"Valor existente: {chave}");
-}
-else{
-    Console.WriteLine($"Valor não existe. Adicionar a chave {chave}");
-}
+// string chave = "BA";
+// Console.WriteLine($"Verificando elemento: {chave}");
+
+// if(estados.ContainsKey(chave)){
+//     Console.WriteLine($"Valor existente: {chave}");
+// }
+// else{
+//     Console.WriteLine($"Valor não existe. Adicionar a chave {chave}");
+// }
+
+//TUPLA
+
+// (int Id, string Nome, string Sobrenome, decimal Altura) tupla = (1, "Henrique", "Silva", 1.80M);
+
+// Console.WriteLine($"Id: {tupla.Id}");
+// Console.WriteLine($"Nome: {tupla.Nome}");
+// Console.WriteLine($"Sobrenome: {tupla.Sobrenome}");
+// Console.WriteLine($"Altura: {tupla.Altura}");
+
+// ValueTuple<int, string, string, decimal> outroExemploTupla = (2, "Fernanda", "Pondian", 1.70M);
+// Console.WriteLine($"Id: {outroExemploTupla.Item1}");
+// Console.WriteLine($"Nome: {outroExemploTupla.Item2}");
+// Console.WriteLine($"Sobrenome: {outroExemploTupla.Item3}");
+// Console.WriteLine($"Altura: {outroExemploTupla.Item4}");
 
 
+// var outroExemploTuplaCreate = Tuple.Create(3, "Clara", "Pondian", 1.05M);
+// Console.WriteLine($"Id: {outroExemploTuplaCreate.Item1}");
+// Console.WriteLine($"Nome: {outroExemploTuplaCreate.Item2}");
+// Console.WriteLine($"Sobrenome: {outroExemploTuplaCreate.Item3}");
+// Console.WriteLine($"Altura: {outroExemploTuplaCreate.Item4}");
+
+
+// LeituraArquivo arquivo = new();
+// var (sucesso, linhasArquivo, _) = arquivo.LerArquivo("Arquivos/ArquivoLeitura.txt");
+
+// if(sucesso)
+// {
+//     // Console.WriteLine($"Quantidade de linhas {quantidadeLinhas}");
+
+//     foreach(string linha in linhasArquivo){
+//         Console.WriteLine(linha);
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Não foi possível ler o arquivo");
+// }
+
+//DESCONSTRUCTOR
+// Pessoa p1 = new("Henrique", "Silva");
+// (string nome, string sobrenome) = p1;
+
+// Console.WriteLine($"{nome} {sobrenome}");
+
+int numero = 20;
+bool ehPar = false;
+
+//IF Ternario
+ehPar = numero % 2 == 0;
+Console.WriteLine($"O numero {numero} é {(ehPar ? "par" : "impar")}");
+
+
+//IF normal
+// if(numero % 2 == 0)
+// {
+//     Console.WriteLine($"O numero {numero} é par");
+// }
+// else
+// {
+//     Console.WriteLine($"O numero {numero} é inpar");
+// }
 

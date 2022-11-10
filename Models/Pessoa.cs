@@ -13,6 +13,11 @@ namespace ExemploExplorando.Models
             this.Nome = nome;
             this.Sobrenome = sobrenome;
         }
+
+        public void Deconstruct(out string nome, out string sobrenome){
+            nome = this.Nome;
+            sobrenome = this.Sobrenome;
+        }
                 
         private string _nome;
         public string Nome 
