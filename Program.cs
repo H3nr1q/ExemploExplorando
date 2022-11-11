@@ -203,12 +203,12 @@ using System.Globalization;
 
 // Console.WriteLine($"{nome} {sobrenome}");
 
-int numero = 20;
-bool ehPar = false;
+// int numero = 20;
+// bool ehPar = false;
 
-//IF Ternario
-ehPar = numero % 2 == 0;
-Console.WriteLine($"O numero {numero} é {(ehPar ? "par" : "impar")}");
+// //IF Ternario
+// ehPar = numero % 2 == 0;
+// Console.WriteLine($"O numero {numero} é {(ehPar ? "par" : "impar")}");
 
 
 //IF normal
@@ -221,3 +221,33 @@ Console.WriteLine($"O numero {numero} é {(ehPar ? "par" : "impar")}");
 //     Console.WriteLine($"O numero {numero} é inpar");
 // }
 
+//Serialização
+using Newtonsoft.Json;
+
+// DateTime dataAtual = DateTime.Now;
+
+// List<Venda> listaVenda = new();
+
+// Venda v1 = new(1, "Caneta", 1.00M, dataAtual);
+// Venda v2 = new(2, "Caderno 1 Matéria", 7.50M, dataAtual);
+
+// listaVenda.Add(v1);
+// listaVenda.Add(v2);
+
+// string serializado = JsonConvert.SerializeObject(listaVenda, Formatting.Indented);
+
+// File.WriteAllText("Arquivos/vendas.json", serializado);
+
+// Console.WriteLine(serializado);
+
+//Deserealizar
+
+string conteudoArquivo = File.ReadAllText("Arquivos/vendas.json");
+
+List<Venda> listaVenda = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+
+foreach (Venda venda in listaVenda)
+{
+    Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}," +
+                      $"Preco: {venda.Preco}, Data: {venda.DataVenda.ToString("dd/MM/yyyy HH:mm")}");
+}

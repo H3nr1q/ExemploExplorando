@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Nome_Produto": "Caneta",
+    "Preco": 1.00,
+    "DataVenda": "2022-11-10T23:30:02.6205509-03:00"
+  },
+  {
+    "Id": 2,
+    "Nome_Produto": "Caderno 1 Matéria",
+    "Preco": 7.50,
+    "DataVenda": "2022-11-10T23:30:02.6205509-03:00"
+  }
+]
